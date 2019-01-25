@@ -10,6 +10,7 @@ import {
   getOrganizations,
   getAllOrganizations
 } from "./api";
+// jest.mock("createPerson", () => jest.fn());
 
 describe("API tests", () => {
   it("returns an array list of persons", async () => {
@@ -21,20 +22,26 @@ describe("API tests", () => {
   });
 
   it("checks if create person has the right parameters", async () => {
-    jest.mock("createPerson", () => jest.fn());
-
-    const createPersonMock = jest.fn();
-    // createPerson = createPersonMock
-    await createPersonMock(createPerson, {
-      name: "Seg un",
+    const createPersonMock = jest.fn(createPerson);
+    await createPersonMock({
+      name: "Segun Abisagbo",
       email: "sege@mail.com"
     });
 
-    expect(createPerson).toBeCalledWith(
+    expect(createPersonMock).toBeCalledWith(
       expect.objectContaining({
         name: expect.any(String),
         email: expect.any(String)
       })
     );
+  });
+
+  it("returns an array list of a create person ", async () => {
+    const createPersonMock = jest.fn(createPerson);
+    await createPersonMock({
+      name: "Segun Abisagbo",
+      email: "sege@mail.com"
+    });
+    expect(createPersonMock).toEqual(expect.arrayContaining([]));
   });
 });
