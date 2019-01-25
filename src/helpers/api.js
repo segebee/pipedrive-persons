@@ -32,10 +32,9 @@ export const createPerson = async data => {
       `${API_URL}/persons?api_token=${TOKEN}`,
       data
     );
-    // console.log("create person response", response);
     return response.data.data;
   } catch (err) {
-    console.log(err);
+    // console.log(err);
     return { err };
   }
 };
@@ -45,10 +44,9 @@ export const getPerson = async id => {
     const response = await Axios.get(
       `${API_URL}/persons/${id}?api_token=${TOKEN}`
     );
-    // console.log("get person response", response);
     return response.data.data;
   } catch (err) {
-    console.log(err);
+    // console.log(err);
     return { err };
   }
 };
@@ -58,10 +56,9 @@ export const findPersons = async name => {
     const response = await Axios.get(
       `${API_URL}/persons/find?term=${name}&api_token=${TOKEN}`
     );
-    // console.log("find person response", response);
     return response.data.data;
   } catch (err) {
-    console.log(err);
+    // console.log(err);
     return { err };
   }
 };
@@ -72,10 +69,9 @@ export const storePersonOrder = async (id, data) => {
       `${API_URL}/persons/${id}?api_token=${TOKEN}`,
       data
     );
-    // console.log("store person order response", response);
     return response.data.data;
   } catch (err) {
-    console.log(err);
+    // console.log(err);
     return { err };
   }
 };
@@ -85,10 +81,9 @@ export const deletePerson = async id => {
     const response = await Axios.delete(
       `${API_URL}/persons/${id}?api_token=${TOKEN}`
     );
-    // console.log("delete person response", response);
     return response.data.data;
   } catch (err) {
-    console.log(err);
+    // console.log(err);
     return { err };
   }
 };
@@ -99,10 +94,9 @@ export const createOrganization = async data => {
       `${API_URL}/organizations?api_token=${TOKEN}`,
       data
     );
-    // console.log("create organization response", response);
     return response.data.data;
   } catch (err) {
-    console.log(err);
+    // console.log(err);
     return { err };
   }
 };
@@ -112,10 +106,9 @@ export const getOrganizations = async name => {
     const response = await Axios.get(
       `${API_URL}/organizations/find?term=${name}&api_token=${TOKEN}`
     );
-    // console.log("get organization response", response);
     return response.data.data;
   } catch (err) {
-    console.log(err);
+    // console.log(err);
     return { err };
   }
 };
@@ -125,10 +118,9 @@ export const getAllOrganizations = async () => {
     const response = await Axios.get(
       `${API_URL}/organizations?api_token=${TOKEN}`
     );
-    // console.log("get all organizations response", response);
     return response.data.data;
   } catch (err) {
-    console.log(err);
+    // console.log(err);
     return { err };
   }
 };
